@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+:root {
+  --line-fill: #3498db;
+  --line-border-emty: #e0e0e0;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -21,7 +26,7 @@ body {
 }
 
 .progress {
-  background-color: #3498db;
+  background-color: var(--line-fill);
   position: absolute;
   top: 50%;
   left: 0;
@@ -43,7 +48,7 @@ body {
 
 .progress-container::before {
   content: '';
-  background-color: #e0e0e0;
+  background-color: var(--line-border-emty);
   position: absolute;
   top: 50%;
   left: 0;
@@ -51,4 +56,46 @@ body {
   height: 4px;
   width: 100%;
   z-index: -1;
+}
+
+.circle {
+  background-color: #fff;
+  color: #999;
+  border-radius: 50px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--line-border-emty);
+  transition: 0.4s ease;
+}
+
+.circle.active {
+  border-color: var(--line-fill);
+}
+
+.btn {
+  background-color: var(--line-fill);
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background-color: var(--line-border-emty);
+  cursor: not-allowed;
 }
